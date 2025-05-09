@@ -27,7 +27,8 @@
         }
         
         .drag-container{
-            width: 50%;
+            width: 100%;
+            min-height: 200px;
         }
         .dragging-item{
             background-color: red !important;
@@ -48,6 +49,20 @@
             height: 1105px;
             border: solid 1px black;
         }
+
+        .header_container{
+            width:100%;
+        }
+        .main_container{
+            width:100%;
+            display:flex;
+        }
+        .main_left_container{
+            width:40%;
+        }
+        .main_right_container{
+            width:60%;
+        }
     `;
     iframeDoc.head.appendChild(style);
     
@@ -66,12 +81,22 @@
         //const educations = document.getElementById('education').value.split('\n').filter(Boolean);
 
         iframeDoc.body.innerHTML = `
-            <div style="display:flex">
-                <div class="drag-container">
-                    <h1 class="drag-item" draggable="true">${name}</h1>
-                    <p class="drag-item" draggable="true">${address}</p>
-                    <p class="drag-item" draggable="true">${telnr}</p>
-                    <p class="drag-item" draggable="true">${email}</p>
+            <div>
+                <div class="header_container">
+                    <h1 draggable="true">${name}</h1>
+                </div>
+                <div class="main_container">
+                    <div class="main_left_container">
+                        <div class="drag-container">
+                            <p class="drag-item" draggable="true">${address}</p>
+                        </div>
+                    </div>
+                    <div class="main_right_container">
+                        <div class="drag-container">
+                            <p class="drag-item" draggable="true">${telnr}</p>
+                            <p class="drag-item" draggable="true">${email}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
