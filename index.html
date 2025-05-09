@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebenslauf Editor</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Lebenslauf Editor</h2>
+    <div class="editor_container">
+        <div>
+            <form id="editor_form">
+                <input type="text" id="name" placeholder="Name" value="Nathaniel" required />
+                <input type="text" id="contact" placeholder="Kontakt (z.B. E-Mail, Telefonnummer)" value="+4911212312" required />
+                <textarea id="experience" rows="4" placeholder="Berufserfahrung (eine pro Zeile)">PHP JS</textarea>
+                <textarea id="education" rows="4" placeholder="Ausbildung (eine pro Zeile)">Zittau HTW</textarea>
+                <button type="submit">Lebenslauf anzeigen</button>
+            </form>
+            <button id="print_button">PDF erstellen</button>
+        </div>
+        <div id="iframe-wrapper" style="width: 50%; overflow: auto;">
+            <div style="transform: scale(0.4); transform-origin: top left; width: max-content;">
+                <iframe id="editor-preview" style="width: 800px; height: 1200px; border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="js/preview.js"></script>
+</body>
+</html>
