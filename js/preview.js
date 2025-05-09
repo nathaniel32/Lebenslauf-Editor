@@ -26,6 +26,7 @@
             }
         }
         .drag-container{
+            width: 50%;
         }
         .drag-item {
             cursor: move;
@@ -60,16 +61,21 @@
         const educations = document.getElementById('education').value.split('\n').filter(Boolean);
 
         iframeDoc.body.innerHTML = `
-            <div class="drag-container">
-                <h1 class="drag-item" draggable="true">${name}</h1>
-                <p class="drag-item" draggable="true">${contact}</p>
-                <div class="drag-item" draggable="true">
-                    <h2>Berufserfahrung</h2>
-                    <ul>${experiences.map(item => `<li>${item}</li>`).join('')}</ul>
+            <div style="display:flex">
+                <div class="drag-container">
+                    <h1 class="drag-item" draggable="true">${name}</h1>
+                    <p class="drag-item" draggable="true">${contact}</p>
+                    <div class="drag-item" draggable="true">
+                        <h2>Berufserfahrung</h2>
+                        <ul>${experiences.map(item => `<li>${item}</li>`).join('')}</ul>
+                    </div>
+                    <div class="drag-item" draggable="true">
+                        <h2>Ausbildung</h2>
+                        <ul>${educations.map(item => `<li>${item}</li>`).join('')}</ul>
+                    </div>
                 </div>
-                <div class="drag-item" draggable="true">
-                    <h2>Ausbildung</h2>
-                    <ul>${educations.map(item => `<li>${item}</li>`).join('')}</ul>
+                <div class="drag-container">
+                    <h1 class="drag-item" draggable="true">${name}</h1>
                 </div>
             </div>
         `;

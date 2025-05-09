@@ -5,6 +5,7 @@ body {
 }
 .editor_container {
     display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 form {
@@ -36,4 +37,12 @@ button {
 }
 button:hover {
     background: #0056b3;
+}
+#editor-preview{
+    transform: scale(0.5);
+    width: 800px;
+    height: 1200px;
+    border: none;
+    border: 5px solid black;
+    transform-origin: top left;
 }

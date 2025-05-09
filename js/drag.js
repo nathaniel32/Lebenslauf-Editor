@@ -3,7 +3,6 @@
     const drag_items = document.querySelectorAll('.drag-item'); //class item
     const drag_containers = document.querySelectorAll('.drag-container'); //class container item
     let draggedItem = null;
-    let closestItem = null;
     let append_in_item_container = false;
 
     drag_containers.forEach(item_container => {
@@ -29,20 +28,6 @@
                 draggedItem.style.backgroundColor = '';
                 draggedItem = null;
             }, 0);
-            if (!append_in_item_container){
-                if(closestItem){
-                    const y = e.clientY;
-                    const rect = closestItem.getBoundingClientRect();
-                    const item_center = (rect.top + rect.height/2);
-                    if (y > item_center){
-                        closestItem.parentElement.insertBefore(draggedItem, closestItem.nextSibling);
-                    }else{
-                        closestItem.parentElement.insertBefore(draggedItem, closestItem);
-                    }
-                }
-            }else{
-                append_in_item_container = false;
-            }
         });
 
         //--------------------------------------------
@@ -72,10 +57,18 @@
             });
 
             if (closestEl) {
-                closestEl.classList.add('closest');
-                closestItem = closestEl;
-                // Jika ingin log jarak:
-                //console.log(`Jarak ke ${closestEl.id}: ${minDist.toFixed(2)}px`);
+                if (!append_in_item_container){
+                    closestEl.classList.add('closest');
+                    const rect = item.getBoundingClientRect();
+                    const item_center = (rect.top + rect.height/2);
+                    if (y > item_center){
+                        closestEl.parentElement.insertBefore(draggedItem, closestEl.nextSibling);
+                    }else{
+                        closestEl.parentElement.insertBefore(draggedItem, closestEl);
+                    }
+                }else{
+                    append_in_item_container = false;
+                }
             }
         });
 
