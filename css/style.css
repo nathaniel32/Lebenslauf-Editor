@@ -39,7 +39,7 @@ button:hover {
     background: #0056b3;
 }
 #editor-preview{
-    transform: scale(0.5);
+    transform: scale(0.8);
     width: 800px;
     height: 1200px;
     border: none;

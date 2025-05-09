@@ -18,14 +18,17 @@
         //console.log(item, item.getBoundingClientRect());
         //--------------------------------------------
         
-        item.addEventListener('dragstart', function () {
+        item.addEventListener('dragstart', function (e) {
             draggedItem = item;
-            setTimeout(() => item.style.backgroundColor = 'grey', 0);
+            const img = new Image();
+            img.src = '';
+            e.dataTransfer.setDragImage(img, 0, 0);
+            setTimeout(() => item.classList.add('dragging-item'), 0);
         });
 
         item.addEventListener('dragend', function (e) {
             setTimeout(() => {
-                draggedItem.style.backgroundColor = '';
+                item.classList.remove('dragging-item');
                 draggedItem = null;
             }, 0);
         });
@@ -72,22 +75,6 @@
             }
         });
 
-        item.addEventListener('dragenter', function (e) {
-            e.preventDefault();
-            if (item !== draggedItem) item.classList.add('drag-over');
-        });
-
-        item.addEventListener('dragleave', function () {
-            item.classList.remove('drag-over');
-        });
-
         //--------------------------------------------
-
-        item.addEventListener('drop', function () {
-            //console.log("drop");
-            if (item !== draggedItem) {
-                item.classList.remove('drag-over');
-            }
-        });
     });
 })();

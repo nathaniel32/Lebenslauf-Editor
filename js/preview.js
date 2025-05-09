@@ -25,15 +25,17 @@
                 margin: 0;
             }
         }
+        
         .drag-container{
             width: 50%;
+        }
+        .dragging-item{
+            background-color: red !important;
+            border: 2px dashed #000 !important;
         }
         .drag-item {
             cursor: move;
             border: 2px solid #000;
-        }
-        .drag-over {
-            border: 2px dashed #000;
         }
         
         * {
@@ -41,7 +43,7 @@
             scrollbar-color: #dad3d3 #f0f0f0;
         }
         body {
-            background-color: rgb(156, 67, 67);
+            background-color: f0f0f0;
             width: 775px;
             height: 1105px;
             border: solid 1px black;
@@ -56,29 +58,31 @@
     document.getElementById('editor_form').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('name').value;
-        const contact = document.getElementById('contact').value;
-        const experiences = document.getElementById('experience').value.split('\n').filter(Boolean);
-        const educations = document.getElementById('education').value.split('\n').filter(Boolean);
+        const address = document.getElementById('address').value;
+        const telnr = document.getElementById('telnr').value;
+        const email = document.getElementById('email').value;
+        
+        //const experiences = document.getElementById('experience').value.split('\n').filter(Boolean);
+        //const educations = document.getElementById('education').value.split('\n').filter(Boolean);
 
         iframeDoc.body.innerHTML = `
             <div style="display:flex">
                 <div class="drag-container">
                     <h1 class="drag-item" draggable="true">${name}</h1>
-                    <p class="drag-item" draggable="true">${contact}</p>
-                    <div class="drag-item" draggable="true">
-                        <h2>Berufserfahrung</h2>
-                        <ul>${experiences.map(item => `<li>${item}</li>`).join('')}</ul>
-                    </div>
-                    <div class="drag-item" draggable="true">
-                        <h2>Ausbildung</h2>
-                        <ul>${educations.map(item => `<li>${item}</li>`).join('')}</ul>
-                    </div>
-                </div>
-                <div class="drag-container">
-                    <h1 class="drag-item" draggable="true">${name}</h1>
+                    <p class="drag-item" draggable="true">${address}</p>
+                    <p class="drag-item" draggable="true">${telnr}</p>
+                    <p class="drag-item" draggable="true">${email}</p>
                 </div>
             </div>
         `;
+        /* <div class="drag-item" draggable="true">
+            <h2>Ausbildung</h2>
+            <ul>${educations.map(item => `<li>${item}</li>`).join('')}</ul>
+        </div>
+        <div class="drag-item" draggable="true">
+            <h2>Berufserfahrung</h2>
+            <ul>${experiences.map(item => `<li>${item}</li>`).join('')}</ul>
+        </div> */
         const script = iframeDoc.createElement('script');
         script.src = 'js/drag.js';
         iframeDoc.body.appendChild(script);
