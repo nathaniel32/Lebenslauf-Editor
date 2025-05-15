@@ -158,7 +158,7 @@ export const preview = (() => {
         headerEl.innerHTML = `
             <img src="${profileImg}" alt="Foto ${profile.f_name}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
             <h1 class="text-4xl font-bold text-blue-700">${profile.f_name}</h1>
-            <p class="text-gray-600">Softwareentwickler</p>
+            /* <p class="text-gray-600">Softwareentwickler</p> */
             <div class="mt-2 text-sm text-gray-500">
                 <p>${profile.f_email} | ${profile.f_telnr}</p>
                 <p>${profile.f_address}</p>
