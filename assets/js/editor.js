@@ -301,8 +301,8 @@ import {preview} from './preview.js';
                         fieldset.remove();
                         if(menuBtn){
                             menuBtn.remove();
-                            updatePreview();
                         }
+                        updatePreview();
                     }
                 });
             }
