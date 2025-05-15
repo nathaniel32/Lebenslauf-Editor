@@ -384,6 +384,7 @@ import {preview} from './preview.js';
             } catch (err) {
                 console.error('Error parsing JSON:', err);
             }
+            event.target.value = '';
         };
         reader.readAsText(file);
     }

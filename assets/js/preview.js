@@ -28,7 +28,7 @@ export const preview = (() => {
         }
         .main_container {
             background-color: #ffffff;
-            padding: 30px 40px 10px 40px;
+            padding: 50px 70px 10px 70px;
             margin: 0;
             width: 795px;
             height: 1123px;
@@ -113,7 +113,7 @@ export const preview = (() => {
         const profileImg = (profile.f_foto == "null") ? config.default_value.default_img_profile.link : profile.f_foto;
         headerEl.innerHTML = `
             <div class="">
-                <h1 class="text-5xl font-bold text-blue-700">${profile.f_name}</h1>
+                <h1 class="text-5xl font-bold text-gray-700">${profile.f_name}</h1>
                 <div class="mx-1 mt-5 text-gray-600 space-y-1">
                     ${renderContactItem('fa-solid fa-envelope', profile.f_email)}
                     ${renderContactItem('fa-solid fa-phone', profile.f_telnr)}
@@ -125,7 +125,7 @@ export const preview = (() => {
                 </div>
             </div>
             <div class="mx-auto self-center mt-2">
-                <img src="${profileImg}" alt="Foto ${profile.f_name}" class="self-center w-40 h-40 object-cover rounded-md">
+                <img src="${profileImg}" alt="Foto ${profile.f_name}" class="w-40 h-40 object-cover rounded-md">
             </div>
         `;
 
