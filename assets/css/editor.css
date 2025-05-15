@@ -60,6 +60,8 @@
 
 .editor_container input[type="text"],
 .editor_container input[type="date"],
+.editor_container input[type="email"],
+.editor_container input[type="tel"],
 .editor_container select {
     padding: 6px 10px;
     font-size: 1em;
