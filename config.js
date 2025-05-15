@@ -18,6 +18,17 @@ const config= {
                 {"id":"2", "text": "Sprachen"},
                 {"id":"3", "text": "Berufserfahrung"},
                 {"id":"4", "text": "Ausbildung"},
+                {"id": "7", "text": "Über mich"},
+                {"id": "8", "text": "Fähigkeiten"},
+                {"id": "9", "text": "Praktika"},
+                {"id": "10", "text": "Projekte"},
+                {"id": "11", "text": "Zertifikate"},
+                {"id": "12", "text": "Hobbys & Interessen"},
+                {"id": "13", "text": "Referenzen"},
+                {"id": "14", "text": "Ehrenamtliches Engagement"},
+                {"id": "15", "text": "Publikationen"},
+                {"id": "16", "text": "Führerschein"},
+                {"id": "17", "text": "Links"}
             ]
         },
         "default_profile":{
