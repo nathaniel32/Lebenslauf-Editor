@@ -365,7 +365,7 @@ import {preview} from './preview.js';
 
     function downloadJSON(data, filename = 'data.nat') {
         const jsonStr = JSON.stringify(data, null, 0);
-        const blob = new Blob([jsonStr], { type: 'application/json' });
+        const blob = new Blob([jsonStr], { type: 'application/octet-stream' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
