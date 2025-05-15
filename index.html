@@ -4,27 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslauf Editor</title>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/css/base.css" rel="stylesheet">
+    <link href="assets/css/nav.css" rel="stylesheet">
+    <link href="assets/css/editor.css" rel="stylesheet">
+    <link href="assets/css/preview.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Lebenslauf Editor</h2>
-    <div class="editor_container">
-        <div>
-            <form id="editor_form">
-                <input type="text" id="name" placeholder="Name" value="Nathaniel" required />
-                <input type="text" id="address" placeholder="Address" value="Hoschulestr 1" required />
-                <input type="tel" id="telnr" placeholder="Telefonnummer" value="+4911212312" required />
-                <input type="email" id="email" placeholder="Email" value="natha@gmail.com" required />
-                <button type="submit">Lebenslauf anzeigen</button>
-            </form>
-            <!-- <form>
-                <textarea id="experience" rows="4" placeholder="Berufserfahrung (eine pro Zeile)">PHP JS</textarea>
-                <textarea id="education" rows="4" placeholder="Ausbildung (eine pro Zeile)">Zittau HTW</textarea>
-            </form> -->
-            <button id="print_button">PDF erstellen</button>
+    <h1>Lebenslauf Editor</h1>
+    <div class="main_container">
+        <div class="nav_container">
+            <div id="editor_menu"></div>
+            <div id="editor_menu_add"></div>
+            <div class="file_control_container">
+                <button id="print_button">PDF erstellen</button>
+                <button id="export_button">Export</button>
+                <input type="file" id="import_file_input" accept=".nat" style="display: none;" />
+                <button id="import_button" type="button">Import</button>
+            </div>
         </div>
-        <iframe id="editor-preview"></iframe>
+        <div class="editor_container">
+            <form id="editor_form"></form>
+        </div>
+        <div class="preview_container">
+            <iframe id="editor_preview"></iframe>
+        </div>
     </div>
-    <script src="js/preview.js"></script>
+    <script src="assets/js/editor.js" type="module"></script>
+    
+    <script>
+        const scrollContainer = document.getElementById('editor_form');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.classList.add('active');
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+        });
+
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.classList.remove('editor_dragging');
+        });
+
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.classList.remove('editor_dragging');
+        });
+
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            scrollContainer.className = 'editor_dragging';
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 0.6;
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 </body>
 </html>

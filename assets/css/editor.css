@@ -1,0 +1,117 @@
+.editor_container{
+    width: 40%;
+    user-select: none;
+}
+
+.editor_container .editor_dragging{
+    cursor: move;
+}
+
+.editor_container button{
+    background-color: #4285f4;
+    color: white;
+    padding: 6px 12px;
+}
+
+.f_foto_container{
+    height: 50px;
+    width: 50px;
+}
+
+.f_foto_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#editor_form {
+    background-color: #fdfdfd;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: auto;
+    height: 100%;
+    padding: 5px;
+}
+
+.editor_container fieldset {
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.editor_container legend {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0 10px;
+}
+
+.editor_container label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.editor_container label span {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+.editor_container input[type="text"],
+.editor_container input[type="date"],
+.editor_container select {
+    padding: 6px 10px;
+    font-size: 1em;
+    width: 250px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.editor_container button:hover {
+    background-color: #357ae8;
+}
+
+.editor_container button.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 50%;
+}
+
+.editor_container button.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+.f_profile_wrapper,
+.f_contents_wrapper,
+.f_infos_wrapper,
+.f_notes_wrapper {
+    margin-top: 0px;
+}
+
+.f_infos_wrapper,
+.f_notes_wrapper {
+    margin-left: 20px;
+    border-left: 2px solid #ddd;
+    padding-left: 15px;
+}
+
+.f_notes_button, .f_infos_button{
+    width: 100%;
+}
+
+fieldset.f_infos,
+fieldset.f_notes {
+    background-color: #ffffff;
+    border-color: #bbb;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+}

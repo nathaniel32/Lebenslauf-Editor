@@ -1,0 +1,12 @@
+.preview_container{
+    width: 45%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#editor_preview{
+    transform: scale(0.7);
+    border: none;
+    transform-origin: top left;
+    width: 145%;
+    height: 150%;
+}
