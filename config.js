@@ -13,22 +13,22 @@ const config= {
         "content_option_title":{
             "default_array": "0",
             "data": [
-                {"id":"1", "text": "Unbenannt"},
+                {"id":"0", "text": "Unbenannt"},
                 {"id":"1", "text": "Kenntnisse"},
                 {"id":"2", "text": "Sprachen"},
                 {"id":"3", "text": "Berufserfahrung"},
                 {"id":"4", "text": "Ausbildung"},
-                {"id": "7", "text": "Über mich"},
-                {"id": "8", "text": "Fähigkeiten"},
-                {"id": "9", "text": "Praktika"},
-                {"id": "10", "text": "Projekte"},
-                {"id": "11", "text": "Zertifikate"},
-                {"id": "12", "text": "Hobbys & Interessen"},
-                {"id": "13", "text": "Referenzen"},
-                {"id": "14", "text": "Ehrenamtliches Engagement"},
-                {"id": "15", "text": "Publikationen"},
-                {"id": "16", "text": "Führerschein"},
-                {"id": "17", "text": "Links"}
+                {"id": "5", "text": "Über mich"},
+                {"id": "6", "text": "Fähigkeiten"},
+                {"id": "7", "text": "Praktika"},
+                {"id": "8", "text": "Projekte"},
+                {"id": "9", "text": "Zertifikate"},
+                {"id": "10", "text": "Hobbys & Interessen"},
+                {"id": "11", "text": "Referenzen"},
+                {"id": "12", "text": "Ehrenamtliches Engagement"},
+                {"id": "13", "text": "Publikationen"},
+                {"id": "14", "text": "Führerschein"},
+                {"id": "15", "text": "Links"}
             ]
         },
         "default_profile":{
@@ -43,8 +43,8 @@ const config= {
             {"id":"f_name", "element":"input", "type":"text", "label":"Name"},
             {"id":"f_foto", "element":"input", "type":"file", "file_typ": "img", "label":"Foto", "default": "default_profile"},
             {"id":"f_address", "element":"input", "type":"text", "label":"Address"},
-            {"id":"f_telnr", "element":"input", "type":"text", "label":"Telnr"},
-            {"id":"f_email", "element":"input", "type":"text", "label":"Email"}
+            {"id":"f_telnr", "element":"input", "type":"tel", "label":"Telnr"},
+            {"id":"f_email", "element":"input", "type":"email", "label":"Email"}
         ]},
         {"id":"f_contents", "element":"button", "label":"Content", "menu": true, "add_menu": true, "contents":[
             {"id":"f_content_id", "label":"Id", "default": "default_uuid", "return_data": "drag_id"},
