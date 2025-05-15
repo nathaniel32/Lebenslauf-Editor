@@ -401,7 +401,6 @@ import {preview} from './preview.js';
     });
 
     function init(result){
-        console.log(result)
         menuArray = [];
         editorMenu.textContent = '';
         editorMenuAdd.textContent = '';

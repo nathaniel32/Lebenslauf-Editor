@@ -18,17 +18,14 @@ const config= {
                 {"id":"2", "text": "Sprachen"},
                 {"id":"3", "text": "Berufserfahrung"},
                 {"id":"4", "text": "Ausbildung"},
-                {"id": "5", "text": "Über mich"},
+                {"id": "5", "text": "Führerschein"},
                 {"id": "6", "text": "Fähigkeiten"},
                 {"id": "7", "text": "Praktika"},
                 {"id": "8", "text": "Projekte"},
                 {"id": "9", "text": "Zertifikate"},
-                {"id": "10", "text": "Hobbys & Interessen"},
+                {"id": "10", "text": "Hobbys"},
                 {"id": "11", "text": "Referenzen"},
-                {"id": "12", "text": "Ehrenamtliches Engagement"},
-                {"id": "13", "text": "Publikationen"},
-                {"id": "14", "text": "Führerschein"},
-                {"id": "15", "text": "Links"}
+                {"id": "12", "text": "Publikationen"}
             ]
         },
         "default_profile":{
@@ -43,8 +40,12 @@ const config= {
             {"id":"f_name", "element":"input", "type":"text", "label":"Name"},
             {"id":"f_foto", "element":"input", "type":"file", "file_typ": "img", "label":"Foto", "default": "default_profile"},
             {"id":"f_address", "element":"input", "type":"text", "label":"Address"},
-            {"id":"f_telnr", "element":"input", "type":"tel", "label":"Telnr"},
-            {"id":"f_email", "element":"input", "type":"email", "label":"Email"}
+            {"id":"f_telnr", "element":"input", "type":"tel", "label":"Telefonnummer"},
+            {"id":"f_email", "element":"input", "type":"email", "label":"Email"},
+            {"id":"f_familienstand", "element":"input", "type":"text", "label":"Familienstand"},
+            {"id":"f_staatsangehoerigkeit", "element":"input", "type":"text", "label":"Staatsangehörigkeit"},
+            {"id":"f_github", "element":"input", "type":"text", "label":"GitHub"},
+            {"id":"f_linkedin", "element":"input", "type":"text", "label":"LinkedIn"}
         ]},
         {"id":"f_contents", "element":"button", "label":"Content", "menu": true, "add_menu": true, "contents":[
             {"id":"f_content_id", "label":"Id", "default": "default_uuid", "return_data": "drag_id"},

@@ -54,7 +54,8 @@
 
 .editor_container label span {
     display: inline-block;
-    width: 120px;
+    min-width: 130px;
+    margin-right: 15px;
     font-weight: bold;
 }
 

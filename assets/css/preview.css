@@ -1,7 +1,6 @@
 .preview_container{
     width: 45%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    display: inline-block;
 }
 #editor_preview{
     transform: scale(0.7);
