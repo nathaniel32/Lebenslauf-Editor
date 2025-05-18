@@ -145,7 +145,7 @@ export const preview = (() => {
                 infoEl.className = 'mb-4';
                 // Title line if action exists
                 if (info.f_action) {
-                    infoEl.innerHTML += `<h3 class="text-lg font-bold">${info.f_action} – ${info.f_institution}</h3>`;
+                    infoEl.innerHTML += `<h3 class="text-lg font-bold">${info.f_action}${info.f_institution ? " - " + info.f_institution : ""}</h3>`;
                     infoEl.innerHTML += `<p class="text-sm text-gray-500">${renderInfoHeader(info.f_from, info.f_until, info.f_location)}</p>`;
                 }
                 // Notes list
